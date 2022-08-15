@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <locale.h>
 
 struct dados {
 	int codigo;
@@ -13,6 +14,7 @@ struct dados {
 
 
 int main () {
+	setlocale(LC_ALL, "Portuguese");
 	struct dados ficha[300];
 	int opcao = 0, i = 0, j, k, resposta = 1, qtdecadastros = 0, acha;
 	char busca[15];
@@ -20,9 +22,9 @@ int main () {
 	
 	
 	while (opcao != 4) {
-		printf("Escolha a operacao desejada: \n\n");
+		printf("Escolha a operacão desejada: \n\n");
 		printf("1 - Cadastrar vacina\n");  
-		printf("2 - Listar Aplicacoes\n");
+		printf("2 - Listar Aplicações\n");
 		printf("3 - Consultar por CPF\n");
 		printf("4 - Sair\n\n");
 	 	scanf("%d", &opcao);
@@ -54,7 +56,7 @@ int main () {
 				i++;
 				qtdecadastros++;
 				
-				printf("Desejar continuar? Digite 1 para sim e 2 para nao: ");
+				printf("Desejar continuar? Digite 1 para sim e 2 para não: ");
 				scanf("%d", &resposta);
 				printf("\n");		
 				fflush(stdin);	
@@ -66,7 +68,7 @@ int main () {
 		 {
 			if  (opcao == 2) {
  				for (j=0; j<qtdecadastros;j++) {
-				printf("Codigo: %d\n", ficha[j].codigo);
+				printf("Código: %d\n", ficha[j].codigo);
 				fflush(stdin);	
 				printf("Nome: %s\n", ficha[j].nome);
 				fflush(stdin);
@@ -101,7 +103,7 @@ int main () {
 					
 					if(acha == 1) 
 					{
-						printf("Codigo: %d\n", ficha[k].codigo);
+						printf("Código: %d\n", ficha[k].codigo);
 						fflush(stdin);	
 						printf("Nome: %s\n", ficha[k].nome);
 						fflush(stdin);
@@ -115,7 +117,7 @@ int main () {
 						fflush(stdin);			
 					}
 					else
-						printf("Pessoa nao localizada.\n");
+						printf("Pessoa não localizada.\n");
 				}
 			}		
  		} 

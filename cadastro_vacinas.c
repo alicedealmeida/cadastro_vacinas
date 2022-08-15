@@ -12,14 +12,11 @@ struct dados {
 	int lote;
 };
 
-
 int main () {
 	setlocale(LC_ALL, "Portuguese");
 	struct dados ficha[300];
 	int opcao = 0, i = 0, j, k, resposta = 1, qtdecadastros = 0, acha;
-	char busca[15];
-	
-	
+	char busca[15];	
 	
 	while (opcao != 4) {
 		printf("Escolha a operacão desejada: \n\n");
